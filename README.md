@@ -32,7 +32,6 @@
  
 # 六、middleware
     - servicefilter
-    - global middleware
 # 七、ViewComponent
 
 
@@ -42,3 +41,4 @@
 
 - https://joonasw.net/view/aspnet-core-di-deep-dive
 - https://dotblogs.com.tw/armycoding/2018/10/19/013412
+- https://blog.johnwu.cc/article/ironman-day04-asp-net-core-dependency-injection.html
