@@ -20,6 +20,10 @@ namespace DotnetTutorial
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
+                    // 啟動StarUp程式裡所包含的客製化程式
+                    // 如：Controller、Razoor、MiddleWare、
+                    // DI Service、BackGround Service、entity framework........
+                    //
                     webBuilder.UseStartup<Startup>();
                 });
     }

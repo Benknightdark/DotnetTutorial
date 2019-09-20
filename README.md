@@ -1,5 +1,7 @@
 # 一、專案建立
 # 二、環境介紹
+ - Razor注入Service
+ - 在Area資料夾裡的conrtoller必須注入Service
 # 三、EntityFramework
 # 四、startup 設定
 # 五、服務注入  
