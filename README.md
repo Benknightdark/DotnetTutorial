@@ -1,4 +1,4 @@
-# 一、專案建立
+# 一、建立專案
 # 二、環境介紹
 - prgram.cs
 - startup.cs
@@ -7,10 +7,30 @@
 - views
 - Models
 - appsettings.json
+- 安裝其他套件
+```
+
+
+dotnet add package Microsoft.EntityFrameworkCore --version 3.0.0-rc1.19456.14
+
+
+dotnet add package Microsoft.EntityFrameworkCore.Design --version 3.0.0-rc1.19456.14
+
+dotnet add package Microsoft.EntityFrameworkCore.SqlServer --version 3.0.0-rc1.19456.14
+
+dotnet add package Microsoft.EntityFrameworkCore.Tools --version 3.0.0-rc1.19456.14
+
+dotnet tool install --global EntityFrameworkCore.Generator --version 1.1.0.52
+
+```
+
 # 三、EntityFramework
 - 使用CommandLine建立Entity
 # 四、startup 設定
 - 注入DB Entity
+  ```
+  dotnet ef dbcontext scaffold "Server=.,5269  ;Database=yo;user id=sa;password=yourStrong(!)Password" "Microsoft.EntityFrameworkCore.SqlServer" -o Models/DBModels -f -c YoDBContext --use-database-names --no-build --json
+  ```
 - 注入NewtonSoftJSON
 # 五、服務注入 
  - 服務生命週期 
