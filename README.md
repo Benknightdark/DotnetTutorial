@@ -12,13 +12,13 @@
 # 四、startup 設定
 - 注入DB Entity
 - 注入NewtonSoftJSON
-- 
 # 五、服務注入 
  - 服務生命週期 
    - Transient
         - 每次注入時，都重新 new 一個新的實體。
    - Scoped
         - 每個 Request 都重新 new 一個新的實體。
+        - 同一個Request共用一個實體
    - Singleton
         - 程式啟動後會 new 一個實體。也就是運行期間只會有一個實體。
    - HttpClient
