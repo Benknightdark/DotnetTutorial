@@ -10,11 +10,13 @@ docker save -o DockerDB/linux-mssql-volume.tar linux-mssql-volume
 
 # Restore Volume
 ```
-docker load -i DockerDB/linux-mssql-volume.tar
+cd DockerDB
+
+docker load -i linux-mssql-volume.tar
 
 docker run  --rm  -v dockerdb_sqldata2:/volume linux-mssql-volume sh -c 'rm -rf /volume/* /volume/..?* /volume/.[!.]* ; tar -C /volume/ -xjf  /sqldata.tar.bz2 ;'
 
-docker-compose restart
+docker-compose up -d
 ```
 
 
