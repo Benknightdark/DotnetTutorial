@@ -23,6 +23,7 @@
         - 程式啟動後會 new 一個實體。也就是運行期間只會有一個實體。
    - HttpClient
      - 執行http request和response的實體
+     - 通常用來呼叫第三方api服務
    - HostService 
      - 背景服務的實體
  - 建構子注入
