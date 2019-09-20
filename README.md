@@ -41,3 +41,4 @@
 - https://docs.microsoft.com/zh-tw/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-2.2#service-lifetimes
 
 - https://joonasw.net/view/aspnet-core-di-deep-dive
+- https://dotblogs.com.tw/armycoding/2018/10/19/013412
