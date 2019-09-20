@@ -1,0 +1,17 @@
+version: "3.4"
+services:
+####################################### DB Server ######################################
+  yodb:
+    image: "mcr.microsoft.com/mssql/server:2019-CTP3.1-ubuntu"
+    volumes:
+      - sqldata2:/var/opt/mssql
+    ports:
+      - 5269:1433
+    environment:
+      SA_PASSWORD: "yourStrong(!)Password"
+      ACCEPT_EULA: "Y"
+      MSSQL_PID: "Standard"
+    restart: always
+#################################### WebApi Server ########################################
+volumes:
+  sqldata2:
