@@ -1,7 +1,22 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+@using System.Linq
+@using DotnetTutorial.services;
+@inject YoService _yoService;
+@using DotnetTutorial.Models.DBModels;
 
+@foreach(var b in _yoService.GetUser()){
+    <p>I come From Razor</p>
+    <p>@b.name</p>
+
+}
+ ================================
+ @foreach(var b in (List<user>)@ViewBag.data){
+    <p>I come From Controller</p>
+    <p>@b.name</p>
+
+}
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>

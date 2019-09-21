@@ -4,7 +4,6 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace DotnetTutorial.Models.DBModels {
     public partial class YoDBContext : DbContext {
-        public YoDBContext () { }
 
         public static long InstanceCount;
         public YoDBContext (DbContextOptions<YoDBContext> options) : base (options) => System.Threading.Interlocked.Increment (ref InstanceCount);

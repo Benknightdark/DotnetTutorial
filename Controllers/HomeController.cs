@@ -6,21 +6,24 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using DotnetTutorial.Models;
+using DotnetTutorial.services;
 
 namespace DotnetTutorial.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        
+        private YoService _yoService;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger,YoService yoService)
         {
             _logger = logger;
+            _yoService=yoService;
         }
 
         public IActionResult Index()
         {
+            @ViewBag.data=_yoService.GetUser().ToList();
             return View();
         }
 
