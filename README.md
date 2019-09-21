@@ -7,12 +7,10 @@
 - views
 - Models
 - appsettings.json
-- 安裝Entity相關套件
+- 安裝ENTITY相關套件
 ```
 
-
 dotnet add package Microsoft.EntityFrameworkCore --version 3.0.0-rc1.19456.14
-
 
 dotnet add package Microsoft.EntityFrameworkCore.Design --version 3.0.0-rc1.19456.14
 
@@ -31,6 +29,11 @@ dotnet tool install --global EntityFrameworkCore.Generator --version 1.1.0.52
   ```
 # 四、startup 設定
 - 注入DB Entity
+  ```
+  public static long InstanceCount;
+        public YoDBContext (DbContextOptions<YoDBContext> options) : base (options) => System.Threading.Interlocked.Increment (ref InstanceCount);
+
+  ```
  
 - 注入NewtonSoftJSON
 # 五、服務注入 
