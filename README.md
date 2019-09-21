@@ -35,7 +35,6 @@ dotnet tool install --global EntityFrameworkCore.Generator --version 1.1.0.52
 
   ```
  
-- 注入NewtonSoftJSON
 # 五、服務注入 
  - 服務生命週期 
    - Transient
