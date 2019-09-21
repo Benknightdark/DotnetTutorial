@@ -25,6 +25,9 @@ namespace DotnetTutorial {
             services.AddControllersWithViews ();
             services.AddDbContextPool<YoDBContext> (
                 c => c.UseSqlServer (Configuration.GetValue<string> ("DBConectString")));
+            // 加入http context service
+            services.AddHttpContextAccessor();    
+            // 加入YoService
             services.AddScoped<YoService> ();
 
         }

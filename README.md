@@ -24,15 +24,19 @@ dotnet tool install --global EntityFrameworkCore.Generator --version 1.1.0.52
 
 # 三、EntityFramework
 - 使用CommandLine建立Entity
- ```
+ ````
   dotnet ef dbcontext scaffold 'Server=.,5269  ;Database=yo;user id=sa;password=yourStrong(!)Password' 'Microsoft.EntityFrameworkCore.SqlServer' -o Models/DBModels -f -c YoDBContext --use-database-names  --json
-  ```
+  ````
 # 四、startup 設定
 - 注入DB Entity
   ```
+  // 修改YoDBContext
   public static long InstanceCount;
         public YoDBContext (DbContextOptions<YoDBContext> options) : base (options) => System.Threading.Interlocked.Increment (ref InstanceCount);
 
+   // 加入YoDBContexts
+   services.AddDbContextPool<YoDBContext> (
+                c => c.UseSqlServer (Configuration.GetValue<string> ("DBConectString")));
   ```
  
 # 五、服務注入 
@@ -52,6 +56,13 @@ dotnet tool install --global EntityFrameworkCore.Generator --version 1.1.0.52
  - 建構子注入
  - Razor注入Service
  - 在Area注入Service
+  ```
+      // 加入Httpcontext
+      services.AddHttpContextAccessor();    
+
+      // 加入YoService
+      services.AddScoped<YoService> ();
+  ```
 
  
 # 六、middleware
