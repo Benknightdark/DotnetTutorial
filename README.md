@@ -68,7 +68,7 @@ dotnet tool install --global EntityFrameworkCore.Generator --version 1.1.0.52
 # 六、middleware
     - servicefilter
 # 七、ViewComponent
-
+- https://docs.microsoft.com/zh-tw/aspnet/core/mvc/views/view-components?view=aspnetcore-3.0
 
 
 # 參考文件
