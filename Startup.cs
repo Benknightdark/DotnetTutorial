@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DotnetTutorial.Middlewares;
 using DotnetTutorial.Models.DBModels;
 using DotnetTutorial.services;
 using Microsoft.AspNetCore.Builder;
@@ -29,6 +30,8 @@ namespace DotnetTutorial {
             services.AddHttpContextAccessor();    
             // 加入YoService
             services.AddScoped<YoService> ();
+            // 加入Service Filter
+            services.AddScoped<MyServiceFilter>();
 
         }
 

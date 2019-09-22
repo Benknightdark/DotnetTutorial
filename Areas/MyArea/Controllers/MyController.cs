@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using DotnetTutorial.Models.DBModels;
+using DotnetTutorial.Middlewares;
 
 namespace DotnetTutorial.Areas.MyArea.Controllers
 {
@@ -43,7 +44,7 @@ namespace DotnetTutorial.Areas.MyArea.Controllers
             return View(user);
         }
 
-        // GET: My/Create
+        [ServiceFilter(typeof(MyServiceFilter))]
         public IActionResult Create()
         {
             return View();
@@ -149,5 +150,7 @@ namespace DotnetTutorial.Areas.MyArea.Controllers
         {
             return _context.user.Any(e => e.Id == id);
         }
+
+        
     }
 }
