@@ -18,8 +18,7 @@ dotnet add package Microsoft.EntityFrameworkCore.SqlServer --version 3.0.0-rc1.1
 
 dotnet add package Microsoft.EntityFrameworkCore.Tools --version 3.0.0-rc1.19456.14
 
-dotnet tool install --global EntityFrameworkCore.Generator --version 1.1.0.52
-
+dotnet tool install --global dotnet-ef --version 3.0.0-rc1.19456.14
 ```
 
 # 三、EntityFramework
