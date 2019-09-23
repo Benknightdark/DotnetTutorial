@@ -6,14 +6,8 @@ namespace DotnetTutorial.Models.DBModels
 {
     public partial class YoDBContext : DbContext
     {
-        public YoDBContext()
-        {
-        }
-
-        public YoDBContext(DbContextOptions<YoDBContext> options)
-            : base(options)
-        {
-        }
+        public static long InstanceCount;
+        public YoDBContext (DbContextOptions<YoDBContext> options) : base (options) => System.Threading.Interlocked.Increment (ref InstanceCount);
 
         public virtual DbSet<user> user { get; set; }
 
